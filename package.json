@@ -1,0 +1,26 @@
+{
+  "name": "article-posting",
+  "version": "1.0.0",
+  "description": "RECOREM Assignment where a user can post there article and like others article with proper authentication",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Animesh2001/Recorem-Assignment.git"
+  },
+  "keywords": [
+    "application"
+  ],
+  "author": "Animesh Jaiswal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Animesh2001/Recorem-Assignment/issues"
+  },
+  "homepage": "https://github.com/Animesh2001/Recorem-Assignment#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

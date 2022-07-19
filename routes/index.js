@@ -12,5 +12,7 @@ router.get('/',homeController.home);
 //all the routes for user goes into this user route
 router.use('/users',require('./users'));
 
+router.use('/articles',require('./articles'));
+
 
 module.exports = router;

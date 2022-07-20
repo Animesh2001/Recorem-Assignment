@@ -1,49 +1,69 @@
-<h1>
-    Codeial/<%= title %>
-</h1>
+<link rel="stylesheet" href="\css\home.css">
+<div class="heading">
+    <h1>
+        Article/<%= title %>
+    </h1>
+</div>
+
 
 
 <section id="feed-article">
-    <h4>Articles</h4>
-    <% if(locals.user) {%>
+    <div class="feed">
+        <% if(locals.user) {%>
+    <h4><bold>Start your article here</bold></h4>
+   
     <form action="/articles/create" id="new-article-form" method="POST">
-        <textarea name="title" cols="30" rows="3" placeholder="Type Here..."></textarea>
+        <textarea name="title" cols="30" rows="3" placeholder="Title of your article"></textarea>
         <br>
         <br>
-        <textarea name="description" cols="50" rows="13" placeholder="Type Here..."></textarea>
-        <input type="submit" value="Post">
+        <textarea name="description" cols="80" rows="15" placeholder="Description of your article"></textarea>
+        <input type="submit" value="POST">
     </form>
     <%}%>
-
+    <div class="feedtwo">
+    <h4><bold>Posted Articles</bold></h4>
+    </div>
     <div id="articles-list-container">
         <ul>
             <% for(article of articles){%>
+                <div class="article-separator">
             <li>
                 <p>
+                    <div class="title">
                     <%= article.title %>
+                </div>
                     <br>
+                    <div class="description">
                     <%= article.description %>
+                </div>
                     <br>
                     <small>
-                       <%= article.user.name %>
+                        <div class="user">
+                       -<%= article.user.name %>
+                    </div>
                     </small>
                     <br>
                     <small>
+                        <div class="createdat">
                         <%= article.createdAt %>
+                    </div>
                     </small>
 
                     <div class="likes-container">
                         <% if(locals.user && locals.user.id != article.user.id){ %>
                             <a href="/likes/toggle/?id=<%= article.id %>&type=Article" class="toggle-like-button" data-likes="<%= article.likes.length %>"><%= article.likes.length %> Likes</a>
                         <% }else{ %>
-                            <span style="color: blue;"><%= article.likes.length %> Likes</span>
+                            <span class="toggle-like-button"><%= article.likes.length %> Likes</span>
                         <% } %>
                     </div>
                     
                 </p>
+                
             </li>
+            </div>
             <%}%>
         </ul>
     </div>
+</div>
 
 </section>

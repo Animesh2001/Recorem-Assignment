@@ -4,7 +4,7 @@
   "description": "RECOREM Assignment where a user can post there article and like others article with proper authentication",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

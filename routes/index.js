@@ -14,5 +14,6 @@ router.use('/users',require('./users'));
 
 router.use('/articles',require('./articles'));
 
-
+// router.use('/likes',require('./likes'));
+router.use('/likes', require('./likes')); //Including the Likes route
 module.exports = router;

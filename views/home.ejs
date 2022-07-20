@@ -31,6 +31,15 @@
                     <small>
                         <%= article.createdAt %>
                     </small>
+
+                    <div class="likes-container">
+                        <% if(locals.user && locals.user.id != article.user.id){ %>
+                            <a href="/likes/toggle/?id=<%= article.id %>&type=Article" class="toggle-like-button" data-likes="<%= article.likes.length %>"><%= article.likes.length %> Likes</a>
+                        <% }else{ %>
+                            <span style="color: blue;"><%= article.likes.length %> Likes</span>
+                        <% } %>
+                    </div>
+                    
                 </p>
             </li>
             <%}%>

@@ -14,7 +14,13 @@ const articleSchema = new mongoose.Schema({
         //this type is a refrence to user schema
         type:mongoose.Schema.Types.ObjectId,
         ref:'User'
-    }
+    },
+    likes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Like'
+        }
+    ],
 },{
     //timestamps automatically introduces 
     //created at

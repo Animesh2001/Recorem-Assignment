@@ -1,6 +1,7 @@
 //Setting up mongoose
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/codeial_development');
+
+mongoose.connect(process.env.db_name||'mongodb://localhost/codeial_development');
 
 //Fetching the connection
 const db = mongoose.connection;

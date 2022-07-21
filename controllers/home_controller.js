@@ -8,7 +8,7 @@ module.exports.home = function(req,res){
 
     Article.find({}).populate('user').exec(function(err,articles){
         return res.render('home',{
-                title:"Codeial | Home",
+                title:"| Home",
                 articles:articles
         });
 });
